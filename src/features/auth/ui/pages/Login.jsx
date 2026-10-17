@@ -1,5 +1,4 @@
 import { useSelector, useDispatch } from "react-redux";
-import { increment } from "../../state/auth/authSlice";
 import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router";
@@ -24,20 +23,15 @@ export default function () {
     const [rememberMe, setRememberMe] = useState(true);
     const [isLoading, setIsLoading] = useState(false);
 
-    // const {
-    //     handleSubmit,
-    //     onLoginSubmit
-    // } = useAuth();
 
-
-   const {
-    register,
-    onLoginSubmit,
-    handleSubmit,
-    onRegisterSubmit,
-    password,
-    errors
-} = useAuth();
+    const {
+        register,
+        onLoginSubmit,
+        handleSubmit,
+        onRegisterSubmit,
+        password,
+        errors
+    } = useAuth();
 
 
     return <main className="relative flex min-h-screen items-center justify-center overflow-hidden bg-[#11120F] px-4 py-8 text-white selection:bg-[#D7FF00] selection:text-black sm:px-6">

@@ -27,7 +27,6 @@ export default function Register() {
         register,
         handleSubmit,
         onRegisterSubmit,
-        password,
         errors,
     } = useAuth();
 
@@ -369,7 +368,7 @@ export default function Register() {
                                     className="shrink-0 text-[#777970]"
                                 />
 
-                                <input
+                                {/* <input
                                     id="confirmPassword"
                                     type={showConfirmPassword ? "text" : "password"}
                                     autoComplete="new-password"
@@ -381,7 +380,7 @@ export default function Register() {
                                         validate: (value) =>
                                             value === password || "Passwords do not match.",
                                     })}
-                                />
+                                /> */}
 
                                 <button
                                     type="button"

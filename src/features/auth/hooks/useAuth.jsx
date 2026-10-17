@@ -1,9 +1,11 @@
 import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
-import loginEmployee from "../../auth/state/auth/authAction.jsx"
+import { loginEmployee, registerEmployee } from "../../auth/state/auth/authAction.jsx"
+import { useNavigate } from "react-router";
 
 export default function useAuth() {
     const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     const {
         register,
@@ -11,13 +13,23 @@ export default function useAuth() {
         formState: { errors },
     } = useForm();
 
-    const onRegisterSubmit = (data) => {
+    const onRegisterSubmit = async (data) => {
         console.log(data);
+        try {
+            await dispatch(registerEmployee(data));
+            navigate('/login');
+        } catch (error) {
+            console.error("Registration failed", error);
+        }
     };
 
-    const onLoginSubmit = (data) => {
-        dispatch(loginEmployee(data));
-
+    const onLoginSubmit = async (data) => {
+        try {
+            await dispatch(loginEmployee(data));
+        } catch (error) {
+            console.error("Login failed", error);
+        }
+        console.log(data);
     };
 
     return {
@@ -25,7 +37,7 @@ export default function useAuth() {
         handleSubmit,
         onRegisterSubmit,
         onLoginSubmit,
-        password,
         errors,
+        navigate,
     };
 }

@@ -1,0 +1,82 @@
+
+@import 'tailwindcss';
+
+/* =========================
+   DARK THEME (DEFAULT)
+========================= */
+
+:root {
+    /* COLORS */
+    --primary: #D7FF00;
+    --secondary: #191A17;
+    --tertiary: #E4FF4A;
+
+    --success: #70D695;
+    --warning: #F0BE65;
+    --danger: #FF7777;
+
+    /* BACKGROUNDS */
+    --bg-main: #11120F;
+    --bg-surface: #191A17;
+    --bg-card: #22231F;
+    --bg-hover: #2B2D26;
+
+    /* TEXT */
+    --text-primary: #FFFFFF;
+    --text-secondary: #E5E5DF;
+    --text-muted: #92938D;
+
+    /* BORDER */
+    --border-color: rgba(255, 255, 255, 0.09);
+
+    /* SHADOW */
+    --shadow-md: 0 8px 20px rgba(0, 0, 0, 0.3);
+
+    /* RADIUS */
+    --radius-md: 10px;
+}
+
+/* =========================
+   LIGHT THEME
+========================= */
+
+.light {
+    /* COLORS */
+    --primary: #A8C900;
+    --secondary: #F0F1EB;
+    --tertiary: #D7FF00;
+
+    --success: #27834A;
+    --warning: #B7791F;
+    --danger: #DC4545;
+
+    /* BACKGROUNDS */
+    --bg-main: #F5F6F2;
+    --bg-surface: #FFFFFF;
+    --bg-card: #F0F1EB;
+    --bg-hover: #E7E9DF;
+
+    /* TEXT */
+    --text-primary: #191A17;
+    --text-secondary: #45483F;
+    --text-muted: #777970;
+
+    /* BORDER */
+    --border-color: #E3E5DC;
+
+    /* SHADOW */
+    --shadow-md: 0 8px 20px rgba(25, 26, 23, 0.08);
+
+    /* RADIUS */
+    --radius-md: 10px;
+}
+
+/* =========================
+   GLOBAL STYLES
+========================= */
+
+body {
+    background: var(--bg-main) ;
+    color: var(--text-primary) ;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
